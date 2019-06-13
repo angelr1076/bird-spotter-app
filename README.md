@@ -10,15 +10,12 @@ To use locally:
 
 2. Create a .env file with 
 
-GEOCODER_API_KEY=
+GEOCODER_API_KEY=<br/>
+PORT=<br/>
+SECRET=<br/>
+MONGODB_URL=<br/>
 
-PORT=
-
-SECRET=
-
-MONGODB_URL=
-
-listed and your own values for each. Remember, none of the values can have quotes or spaces. You'll need to have MongoDB installed, even if you want to run locally. Also, you'll need two Google Maps geocoder API keys, one hidden (added to .env) and one unhidden, added to the views/birds/show page at 
+listed and your own values to each key (create environment variables) for each. Remember, none of the values can have quotes or spaces. You'll need to have MongoDB installed, even if you want to run locally. Also, you'll need two Google Maps geocoder API keys, one hidden (added to .env) and one unhidden, added to the views/birds/show page at 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<YOUR API KEY>&callback=initMap"></script>
 if you want to use the Google Maps location feature.
 
