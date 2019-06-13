@@ -10,23 +10,19 @@ const express = require("express"),
   mongoose = require('mongoose'),
   methodOverride = require("method-override"),
   flash = require("connect-flash"),
-  // Replace URL in listen function with port when running locally
-  port = process.env.PORT
 
-//requiring routes
-const commentRoutes = require("./routes/comments"),
+  //requiring routes
+  commentRoutes = require("./routes/comments"),
   birdRoutes = require("./routes/birds"),
   //Testing user routes
   userRoutes = require("./routes/users"),
   indexRoutes = require("./routes/index");
 
-const URL = process.env.MONGODB_URL || "mongodb://localhost:27017/bird-spotter-app";
-// DB Config
-const db = require("./src/db/mongoose").mongoURI;
+const url = process.env.MONGODB_URL || "mongodb://localhost:27017/bird-spotter-app";
 
 // Connect to MongoDB
 mongoose
-  .connect(db, {
+  .connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false
@@ -73,6 +69,6 @@ app.use("/users", userRoutes);
 app.use("/birds", birdRoutes);
 app.use("/birds/:id/comments", commentRoutes);
 
-app.listen(port, () => {
+app.listen(process.env.PORT, process.env.IP, () => {
   console.log(`Bird Spotter is now running`);
 });
