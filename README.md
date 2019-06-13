@@ -11,8 +11,11 @@ To use locally:
 2. Create a .env file with 
 
 GEOCODER_API_KEY=
+
 PORT=
+
 SECRET=
+
 MONGODB_URL=
 
 listed and your own values for each. Remember, none of the values can have quotes or spaces. You'll need to have MongoDB installed, even if you want to run locally. Also, you'll need two Google Maps geocoder API keys, one hidden (added to .env) and one unhidden, added to the views/birds/show page at 
