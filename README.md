@@ -2,6 +2,8 @@
 
 Bird Spotter is a full-stack Node.js app for bird enthusiasts. It allows users to register, create a profile page. All bird routes have full CRUD features. The app also uses Google Maps to plot out locations of where the pics where taken. 
 
+The live Heroku site is coming soon!
+
 To use locally:
 
 1. Clone the repo and run npm i to install all packages
