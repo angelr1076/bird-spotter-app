@@ -20,4 +20,4 @@ if you want to use the Google Maps location feature.
 3. Run npm run dev to use Nodemon or npm run start in production.
 4. Enjoy!
 
-![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1545767128/search.png)
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1560423990/Screen_Shot_2019-06-13_at_6.59.09_AM.png)
