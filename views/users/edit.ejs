@@ -1,0 +1,130 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <hr />
+            <!-- Show Avatar & Email  -->
+            <% if (!user.avatar && !user.email) { %>
+            <div class="img-thumbnail img-fluid rounded">
+                <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/30.User-512.png" alt="avatar" />
+                <div class="img-caption text-center font-weight-light font-italic">
+                    <!-- Show User Name  -->
+                    <% if(!user.email) { %>
+                    <h3 class="text"><%= user.username %></h3>
+                    <% }; %>
+                    <p>
+                        Please add an email address for your account.
+                    </p>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="img-thumbnail img-fluid rounded">
+                <img src="<%= user.avatar %>" alt="avatar" />
+                <div class="img-caption text-center font-weight-light font-italic">
+                    <!-- Show User Name  -->
+                    <% if(!user.username) { %>
+                    <h3 class="text-capitalize "><%= user.email %></h3>
+                    <% }; %>
+                    <p>
+                        Email: <a href="mailto: <%= user.email %>"><%= user.email %></a>
+                    </p>
+                </div>
+            </div>
+            <% }; %>
+
+            <hr />
+
+            <div class="list-group">
+                <li class="list-group-item">
+                    <a href="#personal_info">Personal Info</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#my_birds">My Birds</a>
+                </li>
+            </div>
+        </div>
+        <!-- Main Editing Area  -->
+        <div class="col-md-9" style="margin: 25px auto">
+            <h3 id="personal_info" class="font-weight-normal font-italic">
+                <%= user.username %>'s personal info
+            </h3>
+            <hr />
+            <div style="width: 50%; margin: auto">
+                <form action="/users/<%= user._id %>?_method=PUT" method="post">
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>" />
+                        <!-- <small id="usernameHelpBlock" class="form-text text-muted">
+                            Sorry, You can't change your username once register.
+                        </small> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avatar">User Avatar URL</label>
+                        <input class="form-control" type="text" name="user[avatar]" value="<%= user.avatar %>" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input class="form-control" type="email" name="user[email]" value="<%= user.email %>" />
+                        <!-- <small id="usernameHelpBlock" class="form-text text-muted">
+                            Sorry, You can't change your email once register.
+                        </small>  -->
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input class="form-control" type="text" name="user[location]" value="<%= user.location %>" />
+                        <!-- <small id="usernameHelpBlock" class="form-text text-muted">
+                            Sorry, You can't change your email once register.
+                        </small>  -->
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" rows="5" name="user[description]"
+                            value="<%= user.description %>">
+                        <%= user.intro %>
+                        </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- edit my birds section -->
+            <div class="container" id="my_birds" style="margin: 100px auto">
+                <h3 class="font-weight-normal font-italic">
+                    <%= user.username%>'s bird snaps
+                </h3>
+            </div>
+            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                <!-- Show all birds -->
+                <% birds.forEach((bird) => { %>
+                <div class="cold-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail" style="padding: 10px;">
+                        <image src="<%= bird.image %>"></image>
+                        <div class="caption">
+                            <h3><%= bird.name %></h3>
+                            <h5><%= bird.location %></h5>
+                        </div>
+                        <% if(currentUser && bird.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-sm btn-warning" href="/birds/<%= bird._id %>/edit">Edit</a>
+                        <form class="delete-form" action="/birds/<%= bird._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                        <% } %>
+                        <a href="/birds/<%= bird._id %>" class="btn btn-primary">More info</a>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
+</div>
+</div>
+</div>
+</div>

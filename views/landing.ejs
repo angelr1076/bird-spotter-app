@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bird Spotter</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/stylesheets/landing.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <!-- display messages -->
+  <div class="container">
+    <% if(success && success.length > 0) { %>
+    <div class="alert alert-success" role="alert">
+      <%= success %>
+    </div>
+    <% } %> <% if(error && error.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+    <% } %>
+  </div>
+
+  <div id="landing-header">
+    <h1>Bird Spotter!</h1>
+    <h3>Join our great community of bird enthusiasts...</h3>
+    <a href="/birds" class="btn btn-md btn-info">View All Birds</a>
+  </div>
+
+  <ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <% include partials/footer %>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.img-thumbnail img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.img-thumbnail {
+  padding: 0;
+}
+
+.img-thumbnail .caption-full {
+  padding: 12px;
+}
+
+.delete-form {
+  display: inline;
+}
+
+.bird-list-item {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bird-header-slideshow {
+  width: auto;
+  height: 365px;
+  opacity: 0.75;
+  object-fit: cover;
+  object-position: center;
+}
+
+.user-list-item {
+  width: 50%;
+  height: 25%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.navbar_fix {
+  border-radius: 5px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 3px;
+}

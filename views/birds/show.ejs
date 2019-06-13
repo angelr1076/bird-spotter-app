@@ -1,0 +1,108 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <!-- bird -->
+            <div class="thumbnail">
+                <image class="img-responsive" src="<%= bird.image %>"></image>
+                <div class="caption-full"></div>
+                <!-- <h4 class="pull-right">$ <%= bird.cost %></h4> -->
+                <h4><a><%= bird.name %></a></h4>
+                <h5><%- bird.description %></h5>
+                <p>
+                    Submitted by <em><%= bird.author.username %></em>,
+                    <%= moment(bird.createdAt).fromNow() %>
+                </p>
+                <diV class="text-right">
+                    <a class="btn btn-xs btn-info" href="/birds">Go Back</a>
+                    <% if(currentUser && bird.author.id.equals(currentUser._id)) { %>
+                    <a class="btn btn-xs btn-warning" href="/birds/<%= bird._id %>/edit">Edit</a>
+                    <form class="delete-form" action="/birds/<%= bird._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-xs btn-danger">DELETE</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+            <!-- comments -->
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="<%= bird._id %>/comments/new">Add a comment</a>
+                </div>
+
+                <!-- display all the comments for a specific bird -->
+                <% bird.comments.forEach((comment) => { %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
+                        <p>
+                            <%= comment.text %>
+                        </p>
+                        <div class="text-right">
+                            <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+                            <a class="btn btn-xs btn-warning"
+                                href="/birds/<%= bird._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                            <form class="delete-form"
+                                action="/birds/<%= bird._id %>/comments/<%= comment._id %>?_method=DELETE"
+                                method="POST">
+                                <button class="btn btn-xs btn-danger">Delete</button>
+                            </form>
+                            </br>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="lead">
+                <div id="map" class="col-md-3"></div>
+            </div>
+            <div class="caption-full">
+                <h5>Last spotted in <em><%= bird.location %></em></h5>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function initMap() {
+        const lat = <%= bird.lat %> ;
+        const lng = <%= bird.lng %> ;
+        const center = {
+            lat: lat,
+            lng: lng
+        };
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: center,
+            scrollwheel: false,
+            disableDefaultUI: true,
+            mapTypeId: 'hybrid',
+            heading: 90,
+            tilt: 45,
+        });
+        const contentString = `
+      <strong><%= bird.name %><br />
+      <%= bird.location %></strong>
+      <p><%= bird.description %></p>
+    `
+        const infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        const marker = new google.maps.Marker({
+            position: center,
+            map: map
+        });
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA9wDhrrYpY-LLcH-xo6hT327WC7F7c7Q&callback=initMap"></script>
+
+<% include ../partials/footer %>

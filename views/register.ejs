@@ -1,0 +1,34 @@
+<% include ./partials/header %>
+<div class="row">
+  <h1 style="text-align: center">Sign Up</h1>
+  <div style=" width: 30%; margin: 25px auto;">
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <input class="form-control" type="text" name="username" placeholder="Daisy Rodriguez" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="email" placeholder="user@gmail.com" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="password" />
+      </div>
+      <div class="form-group">
+        <label for="avatar">User Avatar URL *</label>
+        <input class="form-control" type="text" name="avatar" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="description" class="form-control" rows="5" name="description"
+          placeholder="description" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="location" name="location" placeholder="location" />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-lg btn-primary btn-block">Sign Up</button>
+      </div>
+    </form>
+    <a href="/birds">Go Back</a>
+  </div>
+</div>
+<%include ./partials/footer %>
