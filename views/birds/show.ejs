@@ -48,6 +48,7 @@
                                 method="POST">
                                 <button class="btn btn-xs btn-danger">Delete</button>
                             </form>
+                            <hr style="color:black;">
                             </br>
                             <% } %>
                         </div>
@@ -70,8 +71,8 @@
 
 <script>
     function initMap() {
-        const lat = <%= bird.lat %> ;
-        const lng = <%= bird.lng %> ;
+        const lat = < %= bird.lat % > ;
+        const lng = < %= bird.lng % > ;
         const center = {
             lat: lat,
             lng: lng
