@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"),
   passportLocalMongoose = require("passport-local-mongoose"),
-  validator = require('validator')
+  validator = require("validator");
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
     },
   },
   password: String,
-  avatar: Buffer,
+  avatar: String,
   description: {
     type: String,
     trim: true,
