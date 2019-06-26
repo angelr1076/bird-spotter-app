@@ -54,10 +54,10 @@
                 <form action="/users/<%= user._id %>?_method=PUT" method="post">
                     <div class="form-group">
                         <label for="username">User Name</label>
-                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>" />
-                        <!-- <small id="usernameHelpBlock" class="form-text text-muted">
+                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>" disabled/>
+                        <small id="usernameHelpBlock" class="form-text text-muted">
                             Sorry, You can't change your username once register.
-                        </small> -->
+                        </small>
                     </div>
 
                     <div class="form-group">
@@ -68,23 +68,14 @@
                     <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input class="form-control" type="email" name="user[email]" value="<%= user.email %>" />
-                        <!-- <small id="usernameHelpBlock" class="form-text text-muted">
-                            Sorry, You can't change your email once register.
-                        </small>  -->
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
                         <input class="form-control" type="text" name="user[location]" value="<%= user.location %>" />
-                        <!-- <small id="usernameHelpBlock" class="form-text text-muted">
-                            Sorry, You can't change your email once register.
-                        </small>  -->
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" rows="5" name="user[description]"
-                            value="<%= user.description %>">
-                        <%= user.intro %>
-                        </textarea>
+                        <textarea class="form-control" rows="5" name="user[description]"><%=user.descriptions%></textarea>
                     </div>
 
                     <div class="form-group">

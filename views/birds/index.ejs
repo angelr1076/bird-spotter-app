@@ -9,7 +9,9 @@
         pics of their favorite bird spottings and where they're located.
       </p>
       <p>
-        <a class="btn btn-warning btn-lg" href="/birds/new">Add a new bird pic</a>
+        <a class="btn btn-warning btn-lg" href="/birds/new"
+          >Add a new bird pic</a
+        >
       </p>
     </div>
   </header>
@@ -17,9 +19,8 @@
     <!-- Show all birds -->
     <% birds.forEach((bird) => { %>
     <div class="cold-md-3 col-sm-6">
-      <div class="thumbnail" style="padding:10px;">
-        <image src=" <%= bird.image %>">
-        </image>
+      <div class="thumbnail">
+        <image src=" <%= bird.image %>" style="height: 400px;"> </image>
         <div class="caption">
           <h3><%= bird.name %></h3>
           <h5><%= bird.location %></h5>
