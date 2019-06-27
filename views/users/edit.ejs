@@ -54,7 +54,7 @@
                 <form action="/users/<%= user._id %>?_method=PUT" method="post">
                     <div class="form-group">
                         <label for="username">User Name</label>
-                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>" disabled/>
+                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>" />
                         <small id="usernameHelpBlock" class="form-text text-muted">
                             Sorry, You can't change your username once register.
                         </small>

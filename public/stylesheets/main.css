@@ -7,16 +7,26 @@ html {
   font-size: 62.5%;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.thumbnail img,
 .img-thumbnail img {
   width: 100%;
 }
 
-.img-thumbnail {
+.thumbnail {
   padding: 0;
 }
 
-.img-thumbnail .caption-full {
-  padding: 12px;
+.thumbnail,
+.thumbnail-btn,
+.img-thumbnail,
+.caption-full {
+  padding: 10px;
 }
 
 .delete-form {
