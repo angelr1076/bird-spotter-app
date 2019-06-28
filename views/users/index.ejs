@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <header class="jumbotron text-center">
+    <div class="container">
+      <h1>User profiles</h1>
+      <p>
+        View your fellow bird fanatic user profiles and collections of their bird
+        snaps here.
+      </p>
+    </div>
+  </header>
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <!-- Show all users -->
+    <% users.forEach((user) => { %>
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <% if (!user.avatar) { %>
+        <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/30.User-512.png" alt="avatar" />
+        <% } else { %>
+        <image src=" <%= user.avatar %>">
+        </image>
+        <% } %>
+        <div class="caption">
+          <h3><%= user.username %></h3>
+          <h5><%= user.location %></h5>
+        </div>
+        <a href="/users/<%= user._id %>" class="btn btn-primary">View Profile</a>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+<% include ../partials/footer %>

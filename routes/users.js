@@ -22,15 +22,12 @@ router.get("/:id", (req, res) => {
       .equals(foundUser._id)
       .exec((err, birds) => {
         if (err) {
-          req.flash(
-            "error",
-            "Something is wrong, please try again!"
-          );
+          req.flash("error", "Something is wrong, please try again!");
           return res.redirect("back");
         }
         res.render("users/show", {
           user: foundUser,
-          birds
+          birds,
         });
       });
   });
@@ -53,9 +50,26 @@ router.get("/:id/edit", middleware.checkUserOwnership, (req, res) => {
         }
         res.render("users/edit", {
           user: foundUser,
-          birds
+          birds,
         });
       });
+  });
+});
+
+// Index page - show all users
+router.get("/", (req, res) => {
+  // Grab all user from the MongoDB
+  User.find({}, (err, allUsers) => {
+    if (err) {
+      console.log("Sorry, something went wrong.");
+      console.log(err);
+    } else {
+      // Show all users
+      res.render("users/index", {
+        users: allUsers,
+        page: "users",
+      });
+    }
   });
 });
 

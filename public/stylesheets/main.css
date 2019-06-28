@@ -18,15 +18,15 @@ html {
   width: 100%;
 }
 
-.thumbnail {
+/* .thumbnail {
   padding: 0;
-}
+} */
 
 .thumbnail,
 .thumbnail-btn,
 .img-thumbnail,
 .caption-full {
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .delete-form {

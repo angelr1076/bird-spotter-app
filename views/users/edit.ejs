@@ -75,7 +75,8 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" rows="5" name="user[description]"><%=user.descriptions%></textarea>
+                        <textarea class="form-control" rows="5"
+                            name="user[description]"><%=user.descriptions%></textarea>
                     </div>
 
                     <div class="form-group">
@@ -92,7 +93,7 @@
             <div class="row text-center" style="display: flex; flex-wrap: wrap;">
                 <!-- Show all birds -->
                 <% birds.forEach((bird) => { %>
-                <div class="cold-md-3 col-sm-6 col-xs-12">
+                <div class="col-sm-6">
                     <div class="thumbnail" style="padding: 10px;">
                         <image src="<%= bird.image %>"></image>
                         <div class="caption">
