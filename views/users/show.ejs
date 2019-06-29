@@ -10,11 +10,9 @@
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/30.User-512.png" alt="avatar" />
                 <div class="img-caption text-center font-weight-light font-italic">
                     <!-- Show User Name  -->
-                    <% if(!user.email) { %>
                     <h3 class="text"><%= user.username %></h3>
-                    <% }; %>
                     <p>
-                        Please add an email address for your account.
+                        Email: <a href="mailto: <%= user.email %>"><%= user.email %></a>
                     </p>
                 </div>
             </div>
@@ -22,25 +20,18 @@
             <div class="img-thumbnail img-fluid rounded">
                 <img src="<%= user.avatar %>" alt="avatar" />
                 <div class="img-caption text-center font-weight-light font-italic">
-                    <!-- Show User Name  -->
-                    <% if (!user.username) { %>
-                    <h3 class="text-capitalize "><%= user.email %></h3>
-                    <% }; %>
                     <p>
                         Email: <a href="mailto: <%= user.email %>"><%= user.email %></a>
                     </p>
                 </div>
             </div>
             <% }; %>
-
             <hr />
             <% if(!user.description) { %>
-            <h5 class="text-capitalize text-center">No user description added to your profile. You can add one at any
-                time.</h5>
+            <h5 class="text-capitalize text-center">No user description added to profile.</h5>
             <% } else { %>
-            <h6 class="font-weight-light font-italic "><%= user.description %></h6>
+            <h5 class="font-weight-light font-italic text-center"><%= user.description %></h5>
             <% }; %>
-
             <div class="row">
                 <% if(currentUser && user._id.equals(currentUser._id)) { %>
                 <div class="row text-center">
@@ -49,7 +40,6 @@
                 <% }; %>
             </div>
         </div>
-
         <div class="col-md-9">
             <h3 class="text-center font-weight-normal font-italic">
                 <%= user.username %>'s Bird Pics

@@ -10,11 +10,10 @@
                 <img src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/30.User-512.png" alt="avatar" />
                 <div class="img-caption text-center font-weight-light font-italic">
                     <!-- Show User Name  -->
-                    <% if(!user.email) { %>
+
                     <h3 class="text"><%= user.username %></h3>
-                    <% }; %>
                     <p>
-                        Please add an email address for your account.
+                        Email: <a href="mailto: <%= user.email %>"><%= user.email %></a>
                     </p>
                 </div>
             </div>
@@ -22,19 +21,13 @@
             <div class="img-thumbnail img-fluid rounded">
                 <img src="<%= user.avatar %>" alt="avatar" />
                 <div class="img-caption text-center font-weight-light font-italic">
-                    <!-- Show User Name  -->
-                    <% if(!user.username) { %>
-                    <h3 class="text-capitalize "><%= user.email %></h3>
-                    <% }; %>
                     <p>
                         Email: <a href="mailto: <%= user.email %>"><%= user.email %></a>
                     </p>
                 </div>
             </div>
             <% }; %>
-
             <hr />
-
             <div class="list-group">
                 <li class="list-group-item">
                     <a href="#personal_info">Personal Info</a>
@@ -54,7 +47,8 @@
                 <form action="/users/<%= user._id %>?_method=PUT" method="post">
                     <div class="form-group">
                         <label for="username">User Name</label>
-                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>" />
+                        <input class="form-control" type="text" name="user[username]" value="<%= user.username %>"
+                            disabled />
                         <small id="usernameHelpBlock" class="form-text text-muted">
                             Sorry, You can't change your username once register.
                         </small>
