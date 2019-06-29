@@ -4,6 +4,7 @@
   <header class="jumbotron text-center">
     <div class="container">
       <h1>Welcome to Bird Spotter!</h1>
+      <span class="bird-img" src=""></span>
       <p>
         Where bird watching enthusiasts and photographers can unite and share
         pics of their favorite bird spottings and where they're located.
@@ -16,7 +17,7 @@
   <div class="row text-center" style="display: flex; flex-wrap: wrap;">
     <!-- Show all birds -->
     <% birds.forEach((bird) => { %>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-4 col-sm-6">
       <div class="thumbnail">
         <image src=" <%= bird.image %>"> </image>
         <div class="caption">
