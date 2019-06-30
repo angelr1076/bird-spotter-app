@@ -22,12 +22,12 @@ if you want to use the Google Maps location feature. It's not necessary but it a
 
 4. Enjoy!
 
-![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1560423990/Screen_Shot_2019-06-13_at_6.59.09_AM.png)
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906461/Screen_Shot_2019-06-30_at_10.50.06_AM.png)
 
-![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1560423990/Screen_Shot_2019-06-13_at_7.02.07_AM.png)
+![Settings Window]()
 
-![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1560423990/Screen_Shot_2019-06-13_at_7.05.20_AM.png)
+![Settings Window]()
 
-![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1560423990/Screen_Shot_2019-06-13_at_7.04.58_AM.png)
+![Settings Window]()
 
-![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1560423988/Screen_Shot_2019-06-13_at_7.05.28_AM.png)
+![Settings Window]()
