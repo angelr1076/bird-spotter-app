@@ -24,10 +24,12 @@ if you want to use the Google Maps location feature. It's not necessary but it a
 
 ![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906461/Screen_Shot_2019-06-30_at_10.50.06_AM.png)
 
-![Settings Window]()
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906462/Screen_Shot_2019-06-30_at_10.51.53_AM.png)
 
-![Settings Window]()
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906461/Screen_Shot_2019-06-30_at_10.51.19_AM.png)
 
-![Settings Window]()
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906461/Screen_Shot_2019-06-30_at_10.52.04_AM.png)
 
-![Settings Window]()
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906460/Screen_Shot_2019-06-30_at_10.51.47_AM.png)
+
+![Settings Window](https://res.cloudinary.com/angelrodriguez/image/upload/v1561906459/Screen_Shot_2019-06-30_at_10.51.40_AM.png)
